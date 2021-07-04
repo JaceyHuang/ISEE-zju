@@ -1,0 +1,870 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>
+			Numerical Analysis - Project 
+		</title>
+		<script>
+			function check(){  //响应按钮点击事件
+				//var startime=new Date().getTime();  //获取运行时间
+				var birthday=document.getElementById("1").value; // 从输入框中获取生日
+				var sex=document.getElementById("2").value; //从输入框中获取性别
+				var outputh=new String();//保存输出身高
+				var outputw=new String();//保存输出体重
+				var i,j;
+				var flag=true;//判断生日是否输入合法
+				//计算现在的年龄（以天为单位）
+				var year=new Array();
+				var month=new Array();
+				var day=new Array();//用来保存生日数字的数组
+				for (i=0;i<4;i++){
+					if (birthday[i]>='0'&&birthday[i]<='9'){
+						year[i]=birthday[i];//保存年
+					}
+					else {
+						flag=false;//输入不合法
+					}
+				}
+				//将数组转为数字
+				var y="";
+				for (i=0;i<year.length;i++){
+					y=y+year[i];//数组转成字符串
+				}
+				var myyear=parseInt(y);//将字符串转成数字
+				for (i=0;i<2;i++){
+					if (birthday[i+5]>='0'&&birthday[i+5]<='9'){
+						month[i]=birthday[i+5];//保存月
+					}
+					else {
+						flag=false;//输入不合法
+					}
+				}
+				month[1]=month[1]-1;//注意到一月用0表示
+				//将数组转为数字
+				var m="";
+				for (i=0;i<month.length;i++){
+					m=m+month[i];
+				}
+				var mymonth=parseInt(m);
+				for (i=0;i<2;i++){
+					if (birthday[i+8]>='0'&&birthday[i+8]<='9'){
+						day[i]=birthday[i+8];//保存日
+					}
+					else {
+						flag=false;//输入生日不合法
+					}
+				}
+				//将数组转为数字
+				var d="";
+				for (i=0;i<day.length;i++){
+					d+=day[i];
+				}
+				var myday=parseInt(d);
+				if (birthday.length>10){
+					flag=false;//超长
+				}
+				if (flag==false){
+					document.getElementById("3").value="请按要求输入小孩的信息!";
+					document.getElementById("4").value="请按要求输入小孩的信息!";
+					flag=true;
+				}
+				else {
+					//输入的时间
+					var time=Number(new Date(myyear,mymonth,myday));
+					var now=Date.now();//获取现在的时间
+					var diff=(time-now)/1000; //得到相差多少秒				
+					var x=-parseInt(diff/3600/24); //得到相差多少天
+					if (x>=0&&x<=2389.5&&time-now<0){//避免负数四舍五入成为0的情况
+						if (sex=='0'){//男孩
+							//男孩身高
+							var boyh = new Array();
+							//初始化数组
+							for (i=0;i<=35;i++){
+								boyh[i]=new Array();
+							}
+							boyh[0]=[0,45.2,46.9,48.6,50.4,52.2,54.0,55.8]
+							boyh[1]=[29.5,48.7,50.7,52.7,54.8,56.9,59.0,61.2]
+							boyh[2]=[59,52.2,54.3,56.5,58.7,61.0,63.3,65.7]
+							boyh[3]=[88.5,55.3,57.5,59.7,62.0,64.3,66.6,69.0]
+							boyh[4]=[118,57.9,60.1,62.3,64.6,66.9,69.3,71.7]
+							boyh[5]=[147.5,59.9,62.1,64.4,66.7,69.1,71.5,73.9]
+							boyh[6]=[177,61.4,63.7,66.0,68.4,70.8,73.3,75.8]
+							boyh[7]=[206.5,62.7,65.0,67.4,69.8,72.3,74.8,77.4]
+							boyh[8]=[236,63.9,66.3,68.7,71.2,73.7,76.3,78.9]
+							boyh[9]=[265.5,65.2,67.6,70.1,72.6,75.2,77.8,80.5]
+							boyh[10]=[295,66.4,68.9,71.4,74.0,76.6,79.3,82.1]
+							boyh[11]=[324.5,67.5,70.1,72.7,75.3,78.0,80.8,83.6]
+							boyh[12]=[354,68.6,71.2,73.8,76.5,79.3,82.1,85.0]
+							boyh[13]=[442.5,71.2,74.0,76.9,79.8,82.8,85.8,88.9]
+							boyh[14]=[531,73.6,76.6,79.6,82.7,85.8,89.1,92.4]
+							boyh[15]=[619.5,76.0,79.1,82.3,85.6,89.0,92.4,95.9]
+							boyh[16]=[708,78.3,81.6,85.1,88.5,92.1,95.8,99.5]
+							boyh[17]=[796.5,80.5,83.9,87.5,91.1,94.8,98.6,102.5]
+							boyh[18]=[885,82.4,85.9,89.6,93.3,97.1,101.0,105.0]
+							boyh[19]=[973.5,84.4,88.0,91.6,95.4,99.3,103.2,107.2]
+							boyh[20]=[1062,86.3,90.0,93.7,97.5,101.4,105.3,109.4]
+							boyh[21]=[1150.5,87.5,91.2,94.9,98.8,102.7,106.7,110.7]
+							boyh[22]=[1239,89.3,93.0,96.7,100.6,104.5,108.6,112.7]
+							boyh[23]=[1327.5,90.9,94.6,98.5,102.4,106.4,110.4,114.6]
+							boyh[24]=[1416,92.5,96.3,100.2,104.1,108.2,112.3,116.5]
+							boyh[25]=[1504.5,94.0,97.9,101.9,105.9,110.0,114.2,118.5]
+							boyh[26]=[1593,95.6,99.5,103.6,107.7,111.9,116.2,120.6]
+							boyh[27]=[1681.5,97.1,101.1,105.3,109.5,113.8,118.2,122.6]
+							boyh[28]=[1770,98.7,102.8,107.0,111.3,115.7,120.1,124.7]
+							boyh[29]=[1858.5,100.2,104.4,108.7,113.0,117.5,122.0,126.7]
+							boyh[30]=[1947,101.6,105.9,110.2,114.7,119.2,123.8,128.6]
+							boyh[31]=[2035.5,103.0,107.3,111.7,116.3,120.9,125.6,130.4]
+							boyh[32]=[2124,104.1,108.6,113.1,117.7,122.4,127.2,132.1]
+							boyh[33]=[2212.5,105.3,109.8,114.4,119.2,124.0,128.8,133.8]
+							boyh[34]=[2301,106.5,111.1,115.8,120.7,125.6,130.5,135.6]
+							boyh[35]=[2389.5,107.9,112.6,117.4,122.3,127.3,132.4,137.6]
+							//男孩体重
+							var boyw = new Array();
+							for (var i=0;i<=35;i++){
+								boyw[i]=new Array();
+							}
+							boyw[0]=[0,2.26,2.58,2.93,3.32,3.73,4.18,4.66]
+							boyw[1]=[29.5,3.09,3.52,3.99,4.51,5.07,5.67,6.33]
+							boyw[2]=[59,3.94,4.47,5.05,5.68,6.38,7.14,7.97]
+							boyw[3]=[88.5,4.69,5.29,5.97,6.70,7.51,8.40,9.37]
+							boyw[4]=[118,5.25,5.91,6.64,7.45,8.34,9.32,10.39]
+							boyw[5]=[147.5,5.66,6.36,7.14,8.00,8.95,9.99,11.15]
+							boyw[6]=[177,5.97,6.70,7.51,8.41,9.41,10.50,11.72]
+							boyw[7]=[206.5,6.24,6.99,7.83,8.76,9.79,10.93,12.20]
+							boyw[8]=[236,6.46,7.23,8.09,9.05,10.11,11.29,12.60]
+							boyw[9]=[265.5,6.67,7.46,8.35,9.33,10.42,11.64,12.99]
+							boyw[10]=[295,6.86,7.67,8.58,9.58,10.71,11.95,13.34]
+							boyw[11]=[324.5,7.04,7.87,8.80,9.83,10.98,12.26,13.68]
+							boyw[12]=[354,7.21,8.06,9.00,10.05,11.23,12.54,14.00]
+							boyw[13]=[442.5,7.68,8.57,9.57,10.68,11.93,13.32,14.88]
+							boyw[14]=[531,8.13,9.07,10.12,11.29,12.61,14.09,15.75]
+							boyw[15]=[619.5,8.61,9.59,10.69,11.93,13.33,14.90,16.66]
+							boyw[16]=[708,9.06,10.09,11.24,12.54,14.01,15.67,17.54]
+							boyw[17]=[796.5,9.47,10.54,11.75,13.11,14.64,16.38,18.36]
+							boyw[18]=[885,9.86,10.97,12.22,13.64,15.24,17.06,19.13]
+							boyw[19]=[973.5,10.24,11.39,12.68,14.15,15.82,17.72,19.89]
+							boyw[20]=[1062,10.61,11.79,13.13,14.65,16.39,18.37,20.64]
+							boyw[21]=[1150.5,10.97,12.19,13.57,15.15,16.95,19.02,21.39]
+							boyw[22]=[1239,11.31,12.57,14.00,15.63,17.50,19.65,22.13]
+							boyw[23]=[1327.5,11.66,12.96,14.44,16.13,18.07,20.32,22.91]
+							boyw[24]=[1416,12.01,13.35,14.88,16.64,18.67,21.01,23.73]
+							boyw[25]=[1504.5,12.37,13.76,15.35,17.18,19.30,21.76,24.63]
+							boyw[26]=[1593,12.74,14.18,15.84,17.75,19.98,22.57,25.61]
+							boyw[27]=[1681.5,13.12,14.61,16.34,18.35,20.69,23.43,26.68]
+							boyw[28]=[1770,13.50,15.06,16.87,18.98,21.46,24.38,27.85]
+							boyw[29]=[1858.5,13.86,15.48,17.38,19.60,22.21,25.32,29.04]
+							boyw[30]=[1947,14.18,15.87,17.85,20.18,22.94,26.24,30.22]
+							boyw[31]=[2035.5,14.48,16.24,18.31,20.75,23.66,27.17,31.43]
+							boyw[32]=[2124,14.74,16.56,18.71,21.26,24.32,28.03,32.57]
+							boyw[33]=[2212.5,15.01,16.90,19.14,21.82,25.06,29.01,33.89]
+							boyw[34]=[2301,15.30,17.27,19.62,22.45,25.89,30.13,35.41]
+							boyw[35]=[2389.5,15.66,17.73,20.22,23.24,26.95,31.56,37.39]
+							for (i=0;i<36;i++){
+								if (x<=boyh[i][0]){
+									break;//找到该年龄所在的区间
+								}
+							}
+							if (x==boyh[i][0]){//刚好等于已有数据的年龄，则直接输出
+								outputh=[boyh[i][1],boyh[i][2],boyh[i][3],boyh[i][4],boyh[i][5],boyh[i][6],boyh[i][7]];
+								outputw=[boyw[i][1],boyw[i][2],boyw[i][3],boyw[i][4],boyw[i][5],boyw[i][6],boyw[i][7]];
+								document.getElementById("3").value=outputh;
+								document.getElementById("4").value=outputw;
+							}
+							else {								
+								var h=new Array();//两点之间的间距
+								var a=new Array();
+								var l=new Array();
+								var u=new Array();
+								var z=new Array();//解方程组时要用到的参数
+								var b=new Array();//三次样条插值的系数
+								var c=new Array();
+								var d=new Array();
+								var temph=new Array();//保存求得身高的数组
+								var tempw=new Array();//保存求得体重的数组
+								if (i<=2){//最左侧三点，用同样的三次样条曲线
+									for (var k=0;k<=6;k++){//男孩身高
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=boyh[j+1][0]-boyh[j][0];//保存间距
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(boyh[j+1][k+1]-boyh[j][k+1])/h[j]-3*(boyh[j][k+1]-boyh[j-1][k+1])/h[j-1];
+										}
+										l[0]=1;//解线性方程组
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(boyh[j+1][0]-boyh[j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){//解出系数
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(boyh[j+1][k+1]-boyh[j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										temph[k]=boyh[i-1][k+1]+b[i-1]*(x-boyh[i-1][0])+c[i-1]*Math.pow(x-boyh[i-1][0],2)+d[i-1]*Math.pow(x-boyh[i-1][0],3);//代入求得估计值
+										temph[k]=temph[k].toFixed(1);//保留一位小数
+									}
+								
+									for (k=0;k<=6;k++){//男孩体重 
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=boyw[j+1][0]-boyw[j][0];
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(boyw[j+1][k+1]-boyw[j][k+1])/h[j]-3*(boyw[j][k+1]-boyw[j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(boyw[j+1][0]-boyw[j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){//解出曲线的系数
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(boyw[j+1][k+1]-boyw[j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										tempw[k]=boyw[i-1][k+1]+b[i-1]*(x-boyw[i-1][0])+c[i-1]*Math.pow(x-boyw[i-1][0],2)+d[i-1]*Math.pow(x-boyw[i-1][0],3);//代入求得估计值
+										tempw[k]=tempw[k].toFixed(1);//保留一位小数
+									}
+								}
+								else if (i>=33){//最右侧的三个点，用同一条曲线
+									for (var k=0;k<=6;k++){//男孩身高
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=boyh[j+1+31][0]-boyh[j+31][0];
+										}
+										for (j=1;j<4;j++){//解线性方程组
+											a[j]=3*(boyh[31+j+1][k+1]-boyh[31+j][k+1])/h[j]-3*(boyh[31+j][k+1]-boyh[31+j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(boyh[31+j+1][0]-boyh[31+j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(boyh[31+j+1][k+1]-boyh[31+j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										temph[k]=boyh[i-1][k+1]+b[i-32]*(x-boyh[i-1][0])+c[i-32]*Math.pow(x-boyh[i-1][0],2)+d[i-32]*Math.pow(x-boyh[i-1][0],3);
+										temph[k]=temph[k].toFixed(1);//保留一位小数
+									}
+
+									for (var k=0;k<=6;k++){//男孩体重
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=boyw[31+j+1][0]-boyw[31+j][0];
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(boyw[31+j+1][k+1]-boyw[31+j][k+1])/h[j]-3*(boyw[31+j][k+1]-boyw[31+j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){//解线性方程组
+											l[j]=2*(boyw[31+j+1][0]-boyw[31+j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(boyw[31+j+1][k+1]-boyw[31+j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										tempw[k]=boyw[i-1][k+1]+b[i-32]*(x-boyw[i-1][0])+c[i-32]*Math.pow(x-boyw[i-1][0],2)+d[i-32]*Math.pow(x-boyw[i-1][0],3);
+										tempw[k]=tempw[k].toFixed(1);//保留一位小数
+									}
+								}
+								else {// 位于中间的点，用相邻的五点做三次样条曲线
+									for (var k=0;k<=6;k++){//男孩身高
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=boyh[i-1+j][0]-boyh[i-2+j][0];	
+										}
+										for (j=1;j<4;j++){//解线性方程组
+											a[j]=3*(boyh[i+j-1][k+1]-boyh[i+j-2][k+1])/h[j]-3*(boyh[i+j-2][k+1]-boyh[i+j-3][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(boyh[i+j-1][0]-boyh[i+j-3][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){//解出系数
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(boyh[i+j-1][k+1]-boyh[i+j-2][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										temph[k]=boyh[i-1][k+1]+b[1]*(x-boyh[i-1][0])+c[1]*Math.pow(x-boyh[i-1][0],2)+d[1]*Math.pow(x-boyh[i-1][0],3);//代入求值
+										temph[k]=temph[k].toFixed(1);//保留一位小数
+									}
+								
+									for (k=0;k<=6;k++){//男孩体重 
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=boyw[i-1+j][0]-boyw[i-2+j][0];
+										}
+										for (j=1;j<4;j++){//解线性方程组
+											a[j]=3*(boyw[i+j-1][k+1]-boyw[i+j-2][k+1])/h[j]-3*(boyw[i+j-2][k+1]-boyw[i+j-3][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(boyw[i+j-1][0]-boyw[i+j-3][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(boyw[i+j-1][k+1]-boyw[i+j-2][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										tempw[k]=boyw[i-1][k+1]+b[1]*(x-boyw[i-1][0])+c[1]*Math.pow(x-boyw[i-1][0],2)+d[1]*Math.pow(x-boyw[i-1][0],3);
+										tempw[k]=tempw[k].toFixed(1);//保留一位小数
+									}
+								}
+								outputh=[temph[0],temph[1],temph[2],temph[3],temph[4],temph[5],temph[6]];//将求得的估计值保存并输出
+								outputw=[tempw[0],tempw[1],tempw[2],tempw[3],tempw[4],tempw[5],tempw[6]];
+								document.getElementById("3").value=outputh;
+								document.getElementById("4").value=outputw;
+							}
+						}
+						else if (sex=="1"){
+							//女孩，与男孩同理
+							//女孩身高
+							var girlh = new Array();
+							for (i=0;i<=35;i++){
+								girlh[i]=new Array();
+							}
+							girlh[0]=[0,44.7,46.4,48.0,49.7,51.4,53.2,55.0]
+							girlh[1]=[29.5,47.9,49.8,51.7,53.7,55.7,57.8,59.9]
+							girlh[2]=[59,51.1,53.2,55.3,57.4,59.6,61.8,64.1]
+							girlh[3]=[88.5,54.2,56.3,58.4,60.6,62.8,65.1,67.5]
+							girlh[4]=[118,56.7,58.8,61.0,63.1,65.4,67.7,70.0]
+							girlh[5]=[147.5,58.6,60.8,62.9,65.2,67.4,69.8,72.1]
+							girlh[6]=[177,60.1,62.3,64.5,66.8,69.1,71.5,74.0]
+							girlh[7]=[206.5,61.3,63.6,65.9,68.2,70.6,73.1,75.6]
+							girlh[8]=[236,62.5,64.8,67.2,69.6,72.1,74.7,77.3]
+							girlh[9]=[265.5,63.7,66.1,68.5,71.0,73.6,76.2,78.9]
+							girlh[10]=[295,64.9,67.3,69.8,72.4,75.0,77.7,80.5]
+							girlh[11]=[324.5,66.1,68.6,71.1,73.7,76.4,79.2,82.0]
+							girlh[12]=[354,67.2,69.7,72.3,75.0,77.7,80.5,83.4]
+							girlh[13]=[442.5,70.2,72.9,75.6,78.5,81.4,84.3,87.4]
+							girlh[14]=[531,72.8,75.6,78.5,81.5,84.6,87.7,91.0]
+							girlh[15]=[619.5,75.1,78.1,81.2,84.4,87.7,91.1,94.5]
+							girlh[16]=[708,77.3,80.5,83.8,87.2,90.7,94.3,98.0]
+							girlh[17]=[796.5,79.3,82.7,86.2,89.8,93.5,97.3,101.2]
+							girlh[18]=[885,81.4,84.8,88.4,92.1,95.9,99.8,103.8]
+							girlh[19]=[973.5,83.4,86.9,90.5,94.3,98.1,102.0,106.1]
+							girlh[20]=[1062,85.4,88.9,92.5,96.3,100.1,104.1,108.1]
+							girlh[21]=[1150.5,86.6,90.1,93.8,97.5,101.4,105.4,109.4]
+							girlh[22]=[1239,88.4,91.9,95.6,99.4,103.3,107.2,111.3]
+							girlh[23]=[1327.5,90.1,93.7,97.4,101.2,105.1,109.2,113.3]
+							girlh[24]=[1416,91.7,95.4,99.2,103.1,107.0,111.1,115.3]
+							girlh[25]=[1504.5,93.2,97.0,100.9,104.9,109.0,113.1,117.4]
+							girlh[26]=[1593,94.8,98.7,102.7,106.7,110.9,115.2,119.5]
+							girlh[27]=[1681.5,96.4,100.3,104.4,108.5,112.8,117.1,121.6]
+							girlh[28]=[1770,97.8,101.8,106.0,110.2,114.5,118.9,123.4]
+							girlh[29]=[1858.5,99.3,103.4,107.6,111.9,116.2,120.7,125.3]
+							girlh[30]=[1947,100.7,104.9,109.2,113.5,118.0,122.6,127.2]
+							girlh[31]=[2035.5,102.0,106.3,110.7,115.2,119.7,124.4,129.1]
+							girlh[32]=[2124,103.2,107.6,112.0,116.6,121.2,126.0,130.8]
+							girlh[33]=[2212.5,104.4,108.8,113.4,118.0,122.7,127.6,132.5]
+							girlh[34]=[2301,105.5,110.1,114.7,119.4,124.3,129.2,134.26]
+							girlh[35]=[2389.5,106.7,111.4,116.1,121.0,125.9,130.9,136.1]
+							//女孩体重
+							var girlw = new Array();
+							for (var i=0;i<=35;i++){
+								girlw[i]=new Array();
+							}
+							girlw[0]=[0,2.26,2.54,2.85,3.21,3.63,4.10,4.65]
+							girlw[1]=[29.5,2.98,3.33,3.74,4.20,4.74,5.35,6.05]
+							girlw[2]=[59,3.72,4.15,4.65,5.21,5.86,6.60,7.46]
+							girlw[3]=[88.5,4.40,4.90,5.47,6.13,6.87,7.73,8.71]
+							girlw[4]=[118,4.93,5.48,6.11,6.83,7.65,8.59,9.66]
+							girlw[5]=[147.5,5.33,5.92,6.59,7.36,8.23,9.23,10.38]
+							girlw[6]=[177,5.64,6.26,6.96,7.77,8.68,9.73,10.93]
+							girlw[7]=[206.5,5.90,6.55,7.28,8.11,9.06,10.15,11.40]
+							girlw[8]=[236,6.13,6.79,7.55,8.41,9.39,10.51,11.80]
+							girlw[9]=[265.5,6.34,7.03,7.81,8.69,9.70,10.86,12.18]
+							girlw[10]=[295,6.53,7.23,8.03,8.94,9.98,11.16,12.52]
+							girlw[11]=[324.5,6.71,7.43,8.25,9.18,10.24,11.46,12.85]
+							girlw[12]=[354,6.87,7.61,8.45,9.40,10.48,11.73,13.15]
+							girlw[13]=[442.5,7.34,8.12,9.01,10.02,11.18,12.50,14.02]
+							girlw[14]=[531,7.79,8.63,9.57,10.65,11.88,13.29,14.90]
+							girlw[15]=[619.5,8.26,9.15,10.15,11.30,12.61,14.12,15.85]
+							girlw[16]=[708,8.70,9.64,10.70,11.92,13.31,14.92,16.77]
+							girlw[17]=[796.5,9.10,10.09,11.21,12.50,13.97,15.67,17.63]
+							girlw[18]=[885,9.48,10.52,11.70,13.05,14.60,16.39,18.47]
+							girlw[19]=[973.5,9.86,10.94,12.18,13.59,15.22,17.11,19.29]
+							girlw[20]=[1062,10.23,11.36,12.65,14.13,15.83,17.81,20.10]
+							girlw[21]=[1150.5,10.60,11.77,13.11,14.65,16.43,18.50,20.90]
+							girlw[22]=[1239,10.95,12.16,13.55,15.16,17.01,19.17,21.69]
+							girlw[23]=[1327.5,11.29,12.55,14.00,15.67,17.60,19.85,22.49]
+							girlw[24]=[1416,11.62,12.93,14.44,16.17,18.19,20.54,23.30]
+							girlw[25]=[1504.5,11.96,13.32,14.88,16.69,18.79,21.25,24.14]
+							girlw[26]=[1593,12.30,13.71,15.33,17.22,19.42,22.00,25.04]
+							girlw[27]=[1681.5,12.62,14.08,15.78,17.75,20.05,22.75,25.96]
+							girlw[28]=[1770,12.93,14.44,16.20,18.26,20.66,23.50,26.87]
+							girlw[29]=[1858.5,13.23,14.80,16.64,18.78,21.30,24.28,27.84]
+							girlw[30]=[1947,13.54,15.18,17.09,19.33,21.98,25.12,28.89]
+							girlw[31]=[2035.5,13.84,15.54,17.53,19.88,22.65,25.96,29.95]
+							girlw[32]=[2124,14.11,15.87,17.94,20.37,23.27,26.74,30.94]
+							girlw[33]=[2212.5,14.38,16.21,18.35,20.89,23.92,27.57,32.00]
+							girlw[34]=[2301,14.66,16.55,18.78,21.44,24.61,28.46,33.14]
+							girlw[35]=[2389.5,14.96,16.92,19.25,22.03,25.37,29.42,34.40]
+							for (i=0;i<36;i++){
+								if (x<=girlh[i][0]){
+									break;//找到该年龄所在的区间
+								}
+							}
+							if (x==girlh[i][0]){//刚好相等，则直接输出
+								outputh=[girlh[i][1],girlh[i][2],girlh[i][3],girlh[i][4],girlh[i][5],girlh[i][6],girlh[i][7]];
+								outputw=[girlw[i][1],girlw[i][2],girlw[i][3],girlw[i][4],girlw[i][5],girlw[i][6],girlw[i][7]];
+								document.getElementById("3").value=outputh;
+								document.getElementById("4").value=outputw;
+							}
+							else {								
+								var h=new Array();//两点之间的间距
+								var a=new Array();
+								var l=new Array();
+								var u=new Array();
+								var z=new Array();//解方程组需要用到的参数
+								var b=new Array();//三次样条曲线的系数
+								var c=new Array();
+								var d=new Array();
+								var temph=new Array();//保存求得的估计值
+								var tempw=new Array();
+								if (i<=2){//最左侧的三点
+									for (var k=0;k<=6;k++){//女孩身高
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=girlh[j+1][0]-girlh[j][0];
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(girlh[j+1][k+1]-girlh[j][k+1])/h[j]-3*(girlh[j][k+1]-girlh[j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(girlh[j+1][0]-girlh[j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(girlh[j+1][k+1]-girlh[j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										temph[k]=girlh[i-1][k+1]+b[i-1]*(x-girlh[i-1][0])+c[i-1]*Math.pow(x-girlh[i-1][0],2)+d[i-1]*Math.pow(x-girlh[i-1][0],3);
+										temph[k]=temph[k].toFixed(1);//保留一位小数
+									}
+								
+									for (k=0;k<=6;k++){//女孩体重 
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=girlw[j+1][0]-girlw[j][0];
+										}
+										for (j=1;j<4;j++){//解线性方程组
+											a[j]=3*(girlw[j+1][k+1]-girlw[j][k+1])/h[j]-3*(girlw[j][k+1]-girlw[j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(girlw[j+1][0]-girlw[j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(girlw[j+1][k+1]-girlw[j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										tempw[k]=girlw[i-1][k+1]+b[i-1]*(x-girlw[i-1][0])+c[i-1]*Math.pow(x-girlw[i-1][0],2)+d[i-1]*Math.pow(x-girlw[i-1][0],3);
+										tempw[k]=tempw[k].toFixed(1);//保留一位小数
+									}
+								}
+								else if (i>=33){//最右侧的三点
+									for (var k=0;k<=6;k++){//女孩身高
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=girlh[j+1+31][0]-girlh[j+31][0];
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(girlh[31+j+1][k+1]-girlh[31+j][k+1])/h[j]-3*(girlh[31+j][k+1]-girlh[31+j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(girlh[31+j+1][0]-girlh[31+j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(girlh[31+j+1][k+1]-girlh[31+j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										temph[k]=girlh[i-1][k+1]+b[i-32]*(x-girlh[i-1][0])+c[i-32]*Math.pow(x-girlh[i-1][0],2)+d[i-32]*Math.pow(x-girlh[i-1][0],3);//代入求值
+										temph[k]=temph[k].toFixed(1);//保留一位小数
+									}
+
+									for (var k=0;k<=6;k++){//女孩体重
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=girlw[31+j+1][0]-girlw[31+j][0];
+										}
+										for (j=1;j<4;j++){//解方程组
+											a[j]=3*(girlw[31+j+1][k+1]-girlw[31+j][k+1])/h[j]-3*(girlw[31+j][k+1]-girlw[31+j-1][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(girlw[31+j+1][0]-girlw[31+j-1][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(girlw[31+j+1][k+1]-girlw[31+j][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										tempw[k]=girlw[i-1][k+1]+b[i-32]*(x-girlw[i-1][0])+c[i-32]*Math.pow(x-girlw[i-1][0],2)+d[i-32]*Math.pow(x-girlw[i-1][0],3);
+										tempw[k]=tempw[k].toFixed(1);//保留一位小数
+									}
+								}
+								else {// 位于中间的点
+									for (var k=0;k<=6;k++){//女孩身高
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=girlh[i-1+j][0]-girlh[i-2+j][0];
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(girlh[i+j-1][k+1]-girlh[i+j-2][k+1])/h[j]-3*(girlh[i+j-2][k+1]-girlh[i+j-3][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(girlh[i+j-1][0]-girlh[i+j-3][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(girlh[i+j-1][k+1]-girlh[i+j-2][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										temph[k]=girlh[i-1][k+1]+b[1]*(x-girlh[i-1][0])+c[1]*Math.pow(x-girlh[i-1][0],2)+d[1]*Math.pow(x-girlh[i-1][0],3);
+										temph[k]=temph[k].toFixed(1);//保留一位小数
+									}
+								
+									for (k=0;k<=6;k++){//女孩体重 
+										for (j=0;j<4;j++){//取相邻的五个点
+											h[j]=girlw[i-1+j][0]-girlw[i-2+j][0];
+										}
+										for (j=1;j<4;j++){
+											a[j]=3*(girlw[i+j-1][k+1]-girlw[i+j-2][k+1])/h[j]-3*(girlw[i+j-2][k+1]-girlw[i+j-3][k+1])/h[j-1];
+										}
+										l[0]=1;
+										u[0]=z[0]=0;
+										for (j=1;j<4;j++){
+											l[j]=2*(girlw[i+j-1][0]-girlw[i+j-3][0])-h[j-1]*u[j-1];
+											u[j]=h[j]/l[j];
+											z[j]=(a[j]-h[j-1]*z[j-1])/l[j];
+										}
+										l[4]=1;
+										z[4]=0;
+										c[4]=0;
+										for (j=3;j>=0;j--){//解出曲线的系数
+											c[j]=z[j]-u[j]*c[j+1];
+											b[j]=(girlw[i+j-1][k+1]-girlw[i+j-2][k+1])/h[j]-h[j]*(c[j+1]+2*c[j])/3;
+											d[j]=(c[j+1]-c[j])/3/h[j];
+										}
+										tempw[k]=girlw[i-1][k+1]+b[1]*(x-girlw[i-1][0])+c[1]*Math.pow(x-girlw[i-1][0],2)+d[1]*Math.pow(x-girlw[i-1][0],3);
+										tempw[k]=tempw[k].toFixed(1);//保留一位小数
+									}
+								}
+							}
+							outputh=[temph[0],temph[1],temph[2],temph[3],temph[4],temph[5],temph[6]];//将估计值保存到字符串中并输出
+							outputw=[tempw[0],tempw[1],tempw[2],tempw[3],tempw[4],tempw[5],tempw[6]];
+							document.getElementById("3").value=outputh;
+							document.getElementById("4").value=outputw;
+						}
+						else {//未输入性别或未按要求输入性别
+							document.getElementById("3").value="请按要求输入小孩的信息!";
+							document.getElementById("4").value="请按要求输入小孩的信息!";
+						}
+					}
+					else if (x<0||time-now>0){//防止出现整除后四舍五入为0的错误
+						document.getElementById("3").value="月龄为负！请重新输入!";
+						document.getElementById("4").value="月龄为负！请重新输入!";
+					}
+					else if (x>2389.5){//超过最大月龄
+						document.getElementById("3").value="超过最大月龄！";
+						document.getElementById("4").value="超过最大月龄！";
+					}
+				}
+				//var endtime=new Date().getTime();
+				//alert(endtime-startime);   //计算运行时间
+			}
+		</script>
+		<style>
+			*{
+				font-family:微软雅黑;
+				margin:0px;
+				padding:0px;
+			}
+			.box {
+				display: flex;
+				justify-content: center;  /*水平居中*/
+				align-items: center;     /*垂直居中*/
+				width: 100%;
+				height: 100%;
+				background:#F7F7F7;
+			}
+			.inner{   /*控制整体相对页面高度*/
+				width:500px;
+				height:50px;
+				margin-top:-480px;
+			}
+
+			.logo{  /*图标边框*/
+				border:1px solid gray;
+				width:80px;
+				height:80px;
+				border-radius: 100%;
+				background-size: cover;
+				margin:0px auto;
+			}
+
+			img{  /*图标*/
+				border-radius: 50%;
+				overflow: hidden;
+				width: 80px;
+			}
+			
+			 .menu{   /*菜单栏*/
+				height:40px;
+				width:350px;
+				margin:0px auto;
+				margin-top:20px;
+				font-size:.9em;
+			}
+
+			 .menu ul{   /*链接列表*/
+				line-height:2.3em;
+				font-size:1.2em;
+				color:white;
+			}
+			 .menu ul li{
+				list-style-type:none;
+				padding:0;   /*将默认的内边距去掉*/
+				margin:0;    /*将默认的外边距去掉*/
+				float:left;   /*往左浮动*/
+				margin-left:30px;
+				
+			}
+			.menu a:link {
+				color:black;
+				text-decoration:none;
+			}
+				
+			.menu a:hover {  /*选择器*/
+				color:black;
+				text-decoration:none;
+				background-image: linear-gradient(to top,currentColor,currentColor 2px,transparent 2px);
+				padding-bottom:5px;
+			}
+				
+			.menu a:active {
+				color:black;
+				text-decoration:none;
+			}
+
+			.input{  /*输入生日文本框*/
+				margin:0px auto;
+				text-align:center;
+				margin-top:20px;
+			}
+			.intext{
+				height:32px;
+				width:295px;
+			}
+			.input_sex{   /*输入性别文本框*/
+				margin:0px auto;
+				text-align:center;
+				margin-top:20px;
+			}
+			.in_sextext{
+				height:32px;
+				width:295px;
+			}
+			.input_sex span{    /*标签*/
+				display:inline-block;
+				background:#FF4040;
+				color:white;
+				text-align:center;
+				width:100px;
+				height:32px;
+				margin-left:10px;
+				line-height:32px;
+				cursor:pointer;
+			}
+
+			.height{    /*输出身高文本框*/
+				margin:0px auto;
+				text-align:center;
+				margin-top:20px;
+			}
+			.heitext{
+				height:32px;
+				width:305px;
+			}
+			.height span{   /*身高标签*/
+				display:inline-block;
+				background:#FF4040;
+				color:white;
+				text-align:center;
+				width:100px;
+				height:40px;
+				margin-left:10px;
+				line-height:35px;
+				cursor:pointer;
+			}
+
+			.weight{    /*输出体重文本框*/
+				margin:0px auto;
+				text-align:center;
+				margin-top:20px;
+			}
+			.weitext{
+				height:32px;
+				width:305px;
+			}
+			.weight span{   /*体重标签*/
+				display:inline-block;
+				background:#FF4040;
+				color:white;
+				text-align:center;
+				width:100px;
+				height:40px;
+				margin-left:10px;
+				line-height:35px;
+				cursor:pointer;
+			}
+
+			footer{    /*页脚*/
+				text-align:center;
+				margin-top:80px;
+			}
+			footer p:nth-child(1){
+				color:#FF4040;
+				font-size:1.3em;
+			}
+			footer p:nth-child(2){
+				font-size:13px;
+				margin-top:10px;
+			}
+			footer p:nth-child(3){
+				font-size:13px;
+				margin-top:10px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			 <section class="inner">
+				<div class="logo">
+					<img src="logo.jpg" >
+				</div>
+				<div class="menu">    <!--网站链接-->
+							<ul>
+								<li>
+									<a href="http://www.zju.edu.cn/">浙大官网</a>
+								</li>
+								<li>
+									<a href="http://www.isee.zju.edu.cn/">信电学院</a>
+								</li>
+								<li>
+									<a href="http://www.nhc.gov.cn/">国家卫生部</a>
+								</li>
+							</ul>
+				</div>
+				<div class="input">
+					<input type="text"
+						id="1"
+						placeholder="请输入小孩的生日，如：2015/01/01"    /*提示信息*/
+						class="intext"/>
+					
+				</div>
+				<div class="input_sex">
+					<input type="text"
+						id="2"
+						placeholder="请输入小孩的性别，男孩为0，女孩为1"    /*提示信息*/
+						class="in_sextext"/>
+				</div>
+				<div class="input_sex span">
+					<input type="button" value="查询" id="query"
+					onclick="check()"                /*按下按钮时启动check()函数（js）*/
+					style="display:inline-block;                 
+					font-size:medium ;
+					background:#FF4040;
+					color:white;                      /*查询按钮的格式设置*/
+					text-align:center;
+					width:100px;
+					height:40px;
+					margin-left:10px;
+					line-height:38px;
+					cursor:pointer;"\>
+				</div>
+				<div class="height">                    <!--身高输出文本框-->
+					<span>身高/cm</span>             <!--身高标签-->
+					<input type="text" 
+					id="3"
+					placeholder="输出格式：-3SD,-2SD,-1SD,中位数,1SD,2SD,3SD"   /*提示信息*/
+					class="heitext"/>
+				</div>
+				<div class="weight">                <!--体重输出文本框-->
+					<span>体重/kg</span>          <!--体重标签-->
+					<input type="text" 
+					id="4"
+					placeholder="输出格式：-3SD,-2SD,-1SD,中位数,1SD,2SD,3SD" 
+					class="weitext"/>
+				</div>
+				<footer>           <!--页脚-->
+					<p>数值分析方法</p>
+					<p>黄嘉欣 | 3190102060 | 简约，不等于简单</p>
+					<p>版权所有，保留一切权利 | copyright@2021</p>
+				</footer>
+			 </section>
+		</div>
+	</body>
+</html>
