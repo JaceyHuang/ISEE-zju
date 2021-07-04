@@ -1,3 +1,3 @@
 # ISEE-zju
-some data and review of the college live.  
-this is made for study and please do not spread on the Internet
+Some data and review of the college live.  
+This is for learning purposes only, please do not spread on the Internet
