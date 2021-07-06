@@ -1,0 +1,95 @@
+证明题：
+===========================================
+1. 证明gcd(n,u)=an+bu (p.93)
+设n/u的商为q,余数为r，则有
+r = n-q*u
+若gcd(n,u)=k, 则r一定也包含因子k, 因此有
+gcd(n,u) = gcd(u,r)
+由此可得求gcd(n,u)的Euclid算法如下:
+y=n;
+x=u;
+while(x!=0)
+{
+   q = y/x;
+   r = y%x;
+   y=x;
+   x=r;
+}
+当除数x=0时, 被除数y=gcd(n,u)。
+现用数学归纳法证明上述算法中的被除数y及除数x可以表示成:
+   yi = a1i*n + b1i*u   (a)
+   xi = a2i*n + b2i*u   (b)
+其中yi及xi表示Euclid算法第i次循环中计算q、r时的被除数及除数。
+当i=0时, 只要取a1i=1, b1i=0, a2i=0, b2i=1, 则(a)(b)成立。
+设i=j时, (a)(b)成立, 则当i=j+1时, 
+
+   yj+1 = xj = a2j*n + b2j*u
+   xj+1 = yj % xj = a1j*n + b1j*u – qj*(a2j*n + b2j*u)
+=(a1j-qj*a2j)*n + (b1j-qj*b2j)*u
+其中qj表示Euclid算法第j次循环中计算出来的商。显然, 当i=j+1时, 取
+   a1j+1 = a2¬¬j, b1j+1 = b2¬j
+   a2j+1 = (a1j-qj*a2j), b2j+1 = (b1j-qj*b2j)
+即可使(a)(b)成立。
+因此, Euclid算法中的y及x均可以表示成an+bu的形式, 而当x=0时, y就是gcd(n,u)，于是有gcd(n,u)=an+bu。
+
+2. 证明Euler准则(p.98)
+若方程有解y∈Zp,则x是模p的平方剩余:y2 = x mod p
+设p>2是一个素数, x是一个整数, gcd(x,p)=1, 则x是模p的平方剩余的充要条件是:
+x(p-1)/2 ≡ 1 (mod p)
+证明:
+(1)必要性
+因为y2 = x mod p，并且gcd(x,p)=1，所以一定有
+gcd(y, p)=1;   
+根据Fermat小定理知，yp-1 ≡ 1 mod p，因此
+x(p-1)/2 = (y2)p-1/2 = yp-1 = 1 mod p
+(2)充分性
+因为x(p-1)/2 ≡ 1 (mod p)，且x mod p ∈Zp，不妨设x∈Zp。而Zp={0,1,2,…,p-1}是有限域, Zp*={1,2,3,…p-1}在模p乘法运算下是一个循环群, 所以一定存在Zp*的一个生成元b, 使得下式成立:
+   x=bi mod p, 1≤i≤p-1
+例如: 1=42 mod 5; 2=33 mod 5; 3=23 mod 5; 
+4=32 mod 5; 
+因此,
+1 = x(p-1)/2 = (bi)(p-1)/2 = (bp-1)i/2 mod p
+因为b的阶为p-1，即bp-1 mod p = 1，所以i必定是偶数，于是x模p的平方根有整数解，并且其值为±bi/2 mod p。
+
+x = a1 mod m1
+x = a2 mod m2
+x = a3 mod m3
+当m1、m2、m3互素时,上述方程组的解x是唯一的，
+其值= Y mod M
+Y=(
+a1*(m2*m3)* (m2*m3)-1 mod m1 + 
+a2*(m1*m3)* (m1*m3)-1 mod m2 + 
+a3*(m1*m2)* (m1*m2)-1 mod m3 );
+M= m1*m2*m3;
+先证明Y mod mi 是方程组的一个解
+
+
+3. 证明中国剩余定理(p.83)
+设m1,m2,m3,…,mr两两互素, 则以下同余方程组
+x ≡ ai (mod mi), i=1,2,3,…,r    (a)
+模M=m1m2m3…mr的唯一解为
+     r
+x = ∑ ai * Mi * (Mi-1 mod mi)  mod M, 其中Mi = M/mi  (b)
+i=1
+          r
+(1)先证明∑ ai * Mi * (Mi-1 mod mi)  (c)是同余方程组(a)的一个解
+         i=1
+                       r
+对于任意1≤j≤r，都有∑ ai * Mi * (Mi-1 mod mi) mod mj
+                      i=1
+=aj，所以(c)是(a)的一个解。
+
+(2)再证明(b)是同余方程组(a)的模M唯一解
+假定x1及x2是(a)的两个不同解，即 
+x1 = ai mod mi, i=1,2,3…,r
+x2 = ai mod mi, i=1,2,3…,r
+则x1-x2 = 0 mod m¬i, i=1,2,3,…,r
+即mi | (x1-x2), i=1,2,3,…,r
+又因为m1,m2,m3,mr两两互素, 所以
+M | (x1-x2)
+即
+x1 = x2 mod M
+因此(b)是(a)模M的唯一解。
+
+
+4. RAS算法证明，
