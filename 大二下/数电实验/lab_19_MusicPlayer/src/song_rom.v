@@ -1,14 +1,3 @@
-//	How to use:	
-//	1. Edit the songs on the Enter Song sheet.	
-// 	2. Select this whole worksheet, copy it, and paste it into a new file.	
-//	3. Save the file as song_rom.v.	
-
-
-
-
-
-
-
 module song_rom (		
 	clk	,
 	dout	,
@@ -124,7 +113,7 @@ module song_rom (
 	assign memory[	94	] =	{6'd47, 6'd16}	;	// Note:	4G
 	assign memory[	95	] =	{6'd0, 6'd26}	;	// Note:	rest
 	
-	// ¡¶ËÍ±ğ¡·
+	// ã€Šé€åˆ«ã€‹
 	assign memory[	96	] =	{6'd35, 6'd24}	;	// Note:	3G
 	assign memory[	97	] =	{6'd32, 6'd12}	;	// Note:	3E
 	assign memory[	98	] =	{6'd35, 6'd12}	;	// Note:	3G
