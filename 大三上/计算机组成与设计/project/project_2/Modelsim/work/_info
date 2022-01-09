@@ -1,0 +1,128 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/modeltech64_10.4/examples
+vCacheController_FSM
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 JVnH4618gS::E^51BneK23
+I?IdMH`_U[8mABf[RZ[=7D3
+Z1 dC:/Users/HP/Desktop/project_2/sim
+w1639506885
+8C:/Users/HP/Desktop/project_2/src/CacheController_FSM.v
+FC:/Users/HP/Desktop/project_2/src/CacheController_FSM.v
+L0 1
+Z2 OL;L;10.4;61
+!s108 1639507518.672000
+!s107 C:/Users/HP/Desktop/project_2/src/CacheController_FSM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/HP/Desktop/project_2/src/CacheController_FSM.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@cache@controller_@f@s@m
+vCacheController_Logic
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 jDXb]:PTm6ceZ[e8DN]m02
+ILaTQX:<WWHeAS4K5cH<8k3
+R1
+w1639505673
+8C:/Users/HP/Desktop/project_2/src/CacheController_Logic.v
+FC:/Users/HP/Desktop/project_2/src/CacheController_Logic.v
+L0 1
+R2
+!s108 1639507520.420000
+!s107 C:/Users/HP/Desktop/project_2/src/CacheController_Logic.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/HP/Desktop/project_2/src/CacheController_Logic.v|
+!i113 0
+R3
+n@cache@controller_@logic
+vCacheController_tb
+!s110 1639552014
+!i10b 1
+!s100 h^Ogc;gfR:0;>Lj5?l9SR1
+I7@KhKmMX<=]M4UdnHcanY2
+R0
+dC:/Users/HP/Desktop/project_2/Modelsim
+w1639550023
+8C:/Users/HP/Desktop/project_2/src/CacheController_tb.v
+FC:/Users/HP/Desktop/project_2/src/CacheController_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1639552014.754000
+!s107 C:/Users/HP/Desktop/project_2/src/CacheController_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/HP/Desktop/project_2/src/CacheController_tb.v|
+!i113 0
+R3
+n@cache@controller_tb
+vcounter_n
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 Q2[cfbn;k275LKTY^0i[B0
+I?;j=VLgfMOOz::[LMOGA43
+R1
+w1639503211
+8C:/Users/HP/Desktop/project_2/src/counter_n.v
+FC:/Users/HP/Desktop/project_2/src/counter_n.v
+L0 1
+R2
+!s108 1639507519.557000
+!s107 C:/Users/HP/Desktop/project_2/src/counter_n.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/HP/Desktop/project_2/src/counter_n.v|
+!i113 0
+R3
+vdffre
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 nX2VT4RzohHBL[?554ole0
+Ibo_c:Z4VnnZhc_@mGENXN2
+R1
+w1639487536
+8C:/Users/HP/Desktop/project_2/src/dffre.v
+FC:/Users/HP/Desktop/project_2/src/dffre.v
+L0 1
+R2
+!s108 1639507520.013000
+!s107 C:/Users/HP/Desktop/project_2/src/dffre.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/HP/Desktop/project_2/src/dffre.v|
+!i113 0
+R3
+vmux4_1
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 YQZFdTQjZakoHRNV<V4^U0
+I[TM2AaeL:zJjI[2bWS57P3
+R1
+w1639487554
+8C:/Users/HP/Desktop/project_2/src/mux4_1.v
+FC:/Users/HP/Desktop/project_2/src/mux4_1.v
+L0 1
+R2
+!s108 1639507518.242000
+!s107 C:/Users/HP/Desktop/project_2/src/mux4_1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/HP/Desktop/project_2/src/mux4_1.v|
+!i113 0
+R3

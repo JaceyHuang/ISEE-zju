@@ -1,0 +1,43 @@
+C:/Users/HP/Desktop/project_2/src/CacheController_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/HP/Desktop/project_2/src/CacheController_tb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CacheController_tb
+
+Top level modules:
+	CacheController_tb
+
+} {} {}} C:/Users/HP/Desktop/project_2/src/CacheController_Logic.v {1 {vlog -work work -vopt -stats=none C:/Users/HP/Desktop/project_2/src/CacheController_Logic.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CacheController_Logic
+
+Top level modules:
+	CacheController_Logic
+
+} {} {}} C:/Users/HP/Desktop/project_2/src/CacheController_FSM.v {1 {vlog -work work -vopt -stats=none C:/Users/HP/Desktop/project_2/src/CacheController_FSM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CacheController_FSM
+
+Top level modules:
+	CacheController_FSM
+
+} {} {}} C:/Users/HP/Desktop/project_2/src/counter_n.v {1 {vlog -work work -vopt -stats=none C:/Users/HP/Desktop/project_2/src/counter_n.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module counter_n
+
+Top level modules:
+	counter_n
+
+} {} {}} C:/Users/HP/Desktop/project_2/src/mux4_1.v {1 {vlog -work work -vopt -stats=none C:/Users/HP/Desktop/project_2/src/mux4_1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux4_1
+
+Top level modules:
+	mux4_1
+
+} {} {}} C:/Users/HP/Desktop/project_2/src/dffre.v {1 {vlog -work work -vopt -stats=none C:/Users/HP/Desktop/project_2/src/dffre.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dffre
+
+Top level modules:
+	dffre
+
+} {} {}}
