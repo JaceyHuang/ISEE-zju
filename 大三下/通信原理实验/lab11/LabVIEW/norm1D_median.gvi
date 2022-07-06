@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="6A6982500D3BCA2B664B69E9F0A7B5AF" Timestamp="1D57E48A6E34E2B" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="5.3.3.49750" FeatureSetName="LabVIEW控件" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
+		<ParsableNamespace AssemblyFileVersion="5.3.3.49750" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="5.2.0.9" Version="5.2.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="5.3.3.49750" FeatureSetName="通用语言组件" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="5.2.0.0" Version="5.2.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="5.3.3.49750" FeatureSetName="编辑器" Name="http://www.ni.com/PanelCommon" OldestCompatibleVersion="5.2.0.1" Version="5.2.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="5.3.3.49750" FeatureSetName="编辑器" Name="http://www.ni.com/PlatformFramework" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
+		<ApplicationVersionInfo Build="5.3.3.49750" Name="LabVIEW NXG" Version="2.1.0" />
+	</SourceModelFeatureSet>
+	<VirtualInstrument Id="1" xmlns="http://www.ni.com/LabVIEW.VI">
+		<Icon Id="2" ListViewIconCrop="0 0 40 40" xmlns="http://www.ni.com/PlatformFramework">
+			<IconPanel Height="[float]40" Id="3" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Id="4" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]40">
+					<Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="5" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+					<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+					<FileNameText Attached="[bool]True" Height="[float]36" Id="7" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]norm1D_median" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]36">
+						<FontSetting FontFamily="Verdana" FontSize="6" Id="8" />
+					</FileNameText>
+				</IconTemplate>
+			</IconPanel>
+		</Icon>
+		<ConnectorPane Height="40" Id="9" ListViewHeight="100" ListViewWidth="150" Width="40" xmlns="http://www.ni.com/PlatformFramework">
+			<ConnectorPaneTerminal ListViewHotspot="0 35" Parameter="321" />
+			<ConnectorPaneTerminal Hotspot="0 15" />
+			<ConnectorPaneTerminal Hotspot="0 25" />
+			<ConnectorPaneTerminal Hotspot="0 35" />
+			<ConnectorPaneTerminal Hotspot="15 0" />
+			<ConnectorPaneTerminal Hotspot="25 0" />
+			<ConnectorPaneTerminal Hotspot="40 5" ListViewHotspot="150 50" Parameter="386" />
+			<ConnectorPaneTerminal Hotspot="40 15" ListViewHotspot="150 65" Parameter="392" />
+			<ConnectorPaneTerminal Hotspot="40 25" ListViewHotspot="150 80" Parameter="137" />
+			<ConnectorPaneTerminal Hotspot="40 35" />
+			<ConnectorPaneTerminal Hotspot="15 40" />
+			<ConnectorPaneTerminal Hotspot="25 40" />
+		</ConnectorPane>
+		<DiagramUnplacedItems Id="10" xmlns="http://www.ni.com/MocCommon" />
+		<FrontPanelUnplacedItems Id="11" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" />
+		<BlockDiagram Id="12">
+			<StatisticsDBLArray Bounds="415 280 50 50" DomainName="NI:Analysis:Statistics" Id="25" ResolveFailedHint="Statistics (1D DBL).gvi, 程序包：（LabVIEW NXG Analysis Basic Files，版本2.0.0）" Target="NI:Analysis:Statistics:Statistics\ \(1D\ DBL\)\.gvi">
+				<p.MethodDeclaration>
+					<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+						<Parameter Id="L0" Desc="信号" />
+						<Parameter Id="L4" Desc="错误输入" />
+						<Parameter Id="B1" Desc="全距" />
+						<Parameter Id="B2" Desc="四分位距" />
+						<Parameter Id="R0" Desc="平均值" />
+						<Parameter Id="R1" Desc="标准差" />
+						<Parameter Id="R2" Desc="方差" />
+						<Parameter Id="R4" Desc="错误输出" />
+						<Parameter Id="T1" Desc="中值" />
+						<Parameter Id="T2" Desc="众数" />
+					</MethodDeclaration>
+				</p.MethodDeclaration>
+				<Terminal DataType="Double[]" Direction="Input" Id="L0" Usage="Required" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Error" Direction="Input" Hotspot="0 45" Id="L4" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Output" Hotspot="25 50" Id="B1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double[]" Direction="Output" Hotspot="35 50" Id="B2" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Output" Hotspot="50 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Output" Hotspot="50 15" Id="R1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Output" Hotspot="50 25" Id="R2" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Error" Direction="Output" Hotspot="50 45" Id="R4" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Output" Hotspot="25 0" Id="T1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Output" Hotspot="35 0" Id="T2" xmlns="http://www.ni.com/PlatformFramework" />
+			</StatisticsDBLArray>
+			<Subtract Bounds="525 195 30 30" Id="111" />
+			<Divide Bounds="625 205 30 30" Id="112" />
+			<Wire Id="131" Joints="N(320:R0)|(405,215) h(25) B(1) N(111:y)|(525,215) B(1) v(15) N(393:Value)|(458,230)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="135" Joints="N(25:T1)|(440,280) v(-15) h(125) B(2) N(141:Value)|(623,265) B(2) v(-40) N(112:y)|(625,225)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="136" Joints="N(111:x-y)|(555,210) N(112:x)|(625,210)" xmlns="http://www.ni.com/PlatformFramework" />
+			<DataAccessor Bounds="620 260 40 15" DataItem="137" Id="141" Label="142" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Double" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="141" Bounds="665 260 40 15" Id="142" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>median</p.Text>
+			</NodeLabel>
+			<NodeLabel AttachedTo="390" Bounds="730 215 99 15" Id="391" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>Normalized Vector</p.Text>
+			</NodeLabel>
+			<MethodCall Bounds="355 210 50 50" DomainName="NI:Analysis:Statistics" Id="320" ResolveFailedHint="Mean (CDB).gvi, 程序包：（LabVIEW NXG Analysis Advanced Files，版本2.0.0）" Target="NI:Analysis:Statistics:Mean\ \(CDB\)\.gvi" xmlns="http://www.ni.com/MocCommon">
+				<p.MethodDeclaration>
+					<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+						<Parameter Id="L0" Desc="x" />
+						<Parameter Id="L4" Desc="错误输入" />
+						<Parameter Id="R0" Desc="平均值" />
+						<Parameter Id="R4" Desc="错误输出" />
+					</MethodDeclaration>
+				</p.MethodDeclaration>
+				<Terminal DataType="ComplexDouble[]" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Error" Direction="Input" Hotspot="0 45" Id="L4" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="ComplexDouble" Direction="Output" Hotspot="50 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Error" Direction="Output" Hotspot="50 45" Id="R4" xmlns="http://www.ni.com/PlatformFramework" />
+			</MethodCall>
+			<DataAccessor Bounds="250 210 40 15" DataItem="321" Id="326" Label="327" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="ComplexDouble[]" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="326" Bounds="210 210 35 15" Id="327" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>Vector</p.Text>
+			</NodeLabel>
+			<Wire Id="328" Joints="N(326:Value)|(290,215) h(20) B(1) N(320:L0)|(355,215) B(1) v(-15) N(111:x)|(525,200) B(1) v(80) N(399:r * e^(i*theta\))|(320,295)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="383" Joints="N(399:r)|(350,285) N(25:L0)|(415,285)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="385" Joints="N(112:x/y)|(655,220) N(390:Value)|(688,220)" xmlns="http://www.ni.com/PlatformFramework" />
+			<DataAccessor Bounds="685 215 40 15" DataItem="386" Id="390" Label="391" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="ComplexDouble[]" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<DataAccessor Bounds="455 225 40 15" DataItem="392" Id="393" Label="395" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="ComplexDouble" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="393" Bounds="500 225 30 15" Id="395" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>mean</p.Text>
+			</NodeLabel>
+			<ComplexToPolar Bounds="320 280 30 30" Id="399" />
+		</BlockDiagram>
+		<NativeFrontPanel Height="[float]1600" Id="13" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000">
+			<PanelExecutionWindow Id="14" />
+			<NumericText Height="[float]24" Id="138" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" IsReadOnly="[bool]True" Label="[UIModel]139" Left="[float]340" MinHeight="[float]24" TabIndex="[int]0" Top="[float]100" Value="{DataItemBinding Id=137}" ValueType="[Type]Double" Width="[float]54" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="139" LabelOwner="[UIModel]138" Left="[float]340" Text="[string]median" Top="[float]80" Width="[float]43" xmlns="http://www.ni.com/PanelCommon" />
+			<ArrayViewer ArrayElement="[UIModel]323" BaseName="[string]Array" Columns="[int]1" Dimensions="[int]1" Height="[float]36" Id="322" IsFixedSize="[bool]False" Label="[UIModel]324" Left="[float]148" Orientation="[SMOrientation]Horizontal" Rows="[int]1" TabIndex="[int]1" Top="[float]88" Value="{DataItemBinding Id=321}" Width="[float]136" xmlns="http://www.ni.com/PanelCommon">
+				<p.DefaultElementValue>0x0;0x0</p.DefaultElementValue>
+				<NumericText Height="[float]24" Id="323" InteractionMode="[NumericTextBoxInteractionModes]ArrowKeys, ScrollWheel, ButtonClicks, TextInput" Interval="[ComplexDouble]1 + 0i" IsReadOnly="[bool]False" MinHeight="[float]24" Name="[string]Child" ValueFormatter="[string]LV:G6" ValueType="[Type]ComplexDouble" Width="[float]69" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			</ArrayViewer>
+			<Label Height="[float]16" Id="324" LabelOwner="[UIModel]322" Left="[float]148" Text="[string]Vector" Top="[float]68" Width="[float]38" xmlns="http://www.ni.com/PanelCommon" />
+			<ArrayViewer ArrayElement="[UIModel]388" BaseName="[string]数组" Columns="[int]1" Dimensions="[int]1" Height="[float]120" Id="387" IndexVisibility="[Visibility]Collapsed" IsFixedSize="[bool]False" IsTabStop="[bool]True" Label="[UIModel]397" Left="[float]450" Orientation="[SMOrientation]Vertical" Rows="[int]4" TabIndex="[int]2" Top="[float]100" Value="{DataItemBinding Id=386}" VerticalScrollBarVisibility="[ScrollBarVisibility]Visible" Width="[float]104" xmlns="http://www.ni.com/PanelCommon">
+				<p.DefaultElementValue>0x0;0x0</p.DefaultElementValue>
+				<NumericText BaseName="[string]数值" Height="[float]24" Id="388" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[ComplexDouble]1 + 0i" IsReadOnly="[bool]True" MinHeight="[float]24" ValueFormatter="[string]LV:G6" ValueType="[Type]ComplexDouble" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			</ArrayViewer>
+			<Label Height="[float]16" Id="397" LabelOwner="[UIModel]387" Left="[float]450" Text="[string]Normalized Vector" Top="[float]80" Width="[float]108" xmlns="http://www.ni.com/PanelCommon" />
+			<NumericText BaseName="[string]Numeric" Height="[float]24" Id="394" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[ComplexDouble]1 + 0i" IsReadOnly="[bool]True" Label="[UIModel]398" Left="[float]340" MinHeight="[float]24" TabIndex="[int]3" Top="[float]164" Value="{DataItemBinding Id=392}" ValueFormatter="[string]LV:G6" ValueType="[Type]ComplexDouble" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="398" LabelOwner="[UIModel]394" Left="[float]340" Text="[string]mean" Top="[float]144" Width="[float]33" xmlns="http://www.ni.com/PanelCommon" />
+		</NativeFrontPanel>
+		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="2" DataType="Double" Id="137" Name="median" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0x0</p.DefaultValue>
+		</DataItem>
+		<DataItem CallDirection="Input" CallIndex="0" DataType="ComplexDouble[]" Id="321" Name="Vector" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>
+				<Array Lengths="0" />
+			</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="0" DataType="ComplexDouble[]" Id="386" Name="Normalized Vector" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>null</p.DefaultValue>
+		</DataItem>
+		<DataItem CallDirection="Output" CallIndex="1" DataType="ComplexDouble" Id="392" Name="mean" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0x0;0x0</p.DefaultValue>
+		</DataItem>
+	</VirtualInstrument>
+	<IconTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.IconModel Target="NI:Analysis:Statistics:Statistics\ \(1D\ DBL\)\.gvi">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="0 0 50 50">
+						<IconPanel Background="[SMSolidColorBrush]#00ffffff" Height="[float]50" Left="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]50">
+							<IconTemplate Height="[float]50" Left="[float]0" TemplateName="[string]Blue" Top="[float]0" Width="[float]50">
+								<Rectangle Fill="[SMSolidColorBrush]#ff596574" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+								<Rectangle Fill="[SMSolidColorBrush]#ffe4f7fa" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#ffffffff" Top="[float]0" />
+								<Rectangle Fill="[SMLinearGradientBrush]{Start: 0.5 0}, {End: 0.5 1}, {Stops: {Stop: #ffe4f7fa 0}, {Stop: #ffd0e6e9 1}}" Height="[float]6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]2,0,2,2" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2" RadiusY="[float]2" Top="[float]0" VerticalAlignment="[VerticalAlignment]Bottom" />
+								<Rectangle Fill="[SMLinearGradientBrush]{Start: 0.5 0}, {End: 0.5 1}, {Stops: {Stop: #fff2fcfd 0}, {Stop: #ffe4f7fa 1}}" Height="[float]6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]2,2,2,0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2" RadiusY="[float]2" Top="[float]0" VerticalAlignment="[VerticalAlignment]Top" />
+							</IconTemplate>
+							<Path Data="[PathGeometry]M 50,46 C 50,48.2000008 48.2000008,50 46,50 L 4,50 C 1.79999995,50 0,48.2000008 0,46 L 0,4 C 0,1.79999995 1.79999995,0 4,0 L 46,0 C 48.2000008,0 50,1.79999995 50,4 L 50,46 Z" Fill="[SMSolidColorBrush]#ff727273" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 49,46 C 49,47.6500015 47.6500015,49 46,49 L 4,49 C 2.3499999,49 1,47.6500015 1,46 L 1,4 C 1,2.3499999 2.3499999,1 4,1 L 46,1 C 47.6500015,1 49,2.3499999 49,4 L 49,46 Z" Fill="[SMSolidColorBrush]#ffffffff" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 48,46 C 48,47.0999985 47.0999985,48 46,48 L 4,48 C 2.9000001,48 2,47.0999985 2,46 L 2,4 C 2,2.9000001 2.9000001,2 4,2 L 46,2 C 47.0999985,2 48,2.9000001 48,4 L 48,46 Z" Fill="[SMSolidColorBrush]#ffeff6ec" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 23.177,7.19299984 C 23.177,6.26074314 23.9327393,5.50500011 24.8649998,5.50500011 C 25.7972603,5.50500011 26.5529995,6.26074314 26.5529995,7.19299984 C 26.5529995,8.12525654 25.7972603,8.88099957 24.8649998,8.88099957 C 23.9327393,8.88099957 23.177,8.12525654 23.177,7.19299984 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]3.376" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]3.376" />
+							<Path Data="[PathGeometry]M 46,2 L 4,2 C 2.9000001,2 2,2.9000001 2,4 L 2,12 L 48,12 L 48,4 C 48,2.9000001 47.0999985,2 46,2 Z M 17.4379997,9.98999977 C 17.2910004,9.74199963 17.1490002,9.49499989 17,9.1619997 C 16.6520004,8.38399982 16.507,7.61999989 16.3120003,6.95900011 C 15.8549995,5.40399981 15.474,5.09700012 14.7650003,5.06799984 C 14.1190004,5.04199982 13.6759996,5.38600016 13.2180004,6.94299984 C 13.0240002,7.60400009 12.6949997,8.33699989 12.3479996,9.11400032 C 12.2019997,9.44099998 12.0959997,9.7130003 11.9530001,9.95800018 L 10.6000004,10 C 10.783,9.72900009 10.9809999,9.38000011 11.191,8.91100025 C 11.5220003,8.17099953 11.9359999,7.43100023 12.125,6.78700018 C 12.566,5.28499985 13.1140003,3.77099991 14.75,3.77099991 C 16.4370003,3.77099991 16.8560009,5.22399998 17.2970009,6.72399998 C 17.4860001,7.36800003 17.8110008,8.12800026 18.1429996,8.86900043 C 18.3519993,9.33699989 18.5510006,9.68700027 18.7350006,9.95800018 L 17.4379997,9.98999977 Z M 31,5.45900011 L 27.0499992,5.45900011 C 27.4060001,5.92999983 27.625,6.51000023 27.625,7.14699984 C 27.625,8.69999981 26.3659992,9.95899963 24.8129997,9.95899963 C 23.2600002,9.95899963 22,8.69999981 22,7.14599991 C 22,5.78499985 22.9659996,4.59399986 24.25,4.33400011 L 31,4.33400011 L 31,5.45900011 Z M 38.9529991,9.95899963 L 38.9669991,9.39799976 C 38.7130013,9.82600021 37.7350006,9.95899963 36.7900009,9.95899963 C 36.0779991,9.95899963 35.2509995,9.61499977 35.0200005,8.3579998 L 33.9529991,9.95899963 L 32.9529991,9.95899963 L 34.9529991,6.95900011 L 34.9529991,3.95900011 L 35.9529991,3.95900011 L 35.9529991,6.95900011 L 35.9529991,7.95900011 C 35.9529991,8.97099972 36.2290001,9.15600014 37.1090012,9.15600014 C 37.7579994,9.15600014 38.776001,8.82600021 38.9529991,8.39700031 L 38.9529991,3.95900011 L 39.9529991,3.95900011 L 39.9529991,8.95899963 C 39.9529991,9.50899982 39.9000015,9.95899963 40,9.95899963 L 38.9529991,9.95899963 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 18.5310001,29.8360004 C 18.3530006,30.5270004 18.1660004,31.2539997 17.9570007,32.0050011 L 19.7220001,32.0050011 C 19.8920002,31.3789997 20.0480003,30.7730007 20.198,30.191 C 21.1630001,26.4489994 21.6879997,24.4370003 23.5370007,23.9300003 L 23.5370007,22.0669994 C 20.3689995,22.5690002 19.5629997,25.8360004 18.5310001,29.8360004 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 30.5179996,29.8290005 C 29.4909992,25.8470001 28.6369991,22.5930004 25.3889999,22.073 L 25.3889999,22.073 C 25.0909996,22.0249996 24.7709999,22 24.4300003,22 C 24.1130009,22 23.8169994,22.0230007 23.5380001,22.0669994 L 23.5380001,23.9300003 C 23.8519993,23.8439999 24.2049999,23.802 24.6040001,23.802 C 24.8910007,23.802 25.1509991,23.8279991 25.3899994,23.8789997 L 25.3899994,23.8789997 C 27.3309994,24.2940006 27.7910004,26.4130001 28.8239994,30.4160004 C 28.9559994,30.9290009 29.0930004,31.4599991 29.2399998,32.0060005 L 31.0960007,32.0060005 C 30.8850002,31.2520008 30.6970005,30.5230007 30.5179996,29.8290005 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 36.5029984,41.1590004 C 36.4640007,41.1679993 36.4179993,41.1730003 36.3660011,41.1730003 C 35.7210007,41.1730003 34.1399994,40.4119987 32.3510017,35.8359985 C 32.0839996,35.1580009 31.8490009,34.4830017 31.6350002,33.8190002 L 31.6350002,33.8190002 C 31.4379997,33.2029991 31.2590008,32.5979996 31.0949993,32.0060005 L 29.2399998,32.0060005 C 29.3969994,32.5929985 29.5680008,33.1990013 29.7549992,33.8170013 L 29.7549992,33.8170013 C 30.0289993,34.7200012 30.3419991,35.6489983 30.7129993,36.5940018 C 32.9770012,42.3829994 35.3779984,43 36.4480019,43 C 36.7319984,43 36.9370003,42.9410019 37.0470009,42.9000015 L 36.5029984,41.1590004 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 17.4179993,33.8190002 L 17.4179993,33.8190002 C 17.2049999,34.4830017 16.9699993,35.1570015 16.7040005,35.8349991 C 14.8970003,40.4430008 13.316,41.1520004 12.7250004,41.1520004 C 12.6809998,41.1520004 12.6409998,41.1469994 12.6070004,41.1399994 L 12,42.9000015 C 12.1079998,42.9399986 12.3199997,42.9970016 12.6140003,42.9970016 C 13.7329998,42.9970016 16.0389996,42.1609993 18.316,36.3600006 C 18.6539993,35.4970016 18.9430008,34.6450005 19.1989994,33.8160019 L 19.1989994,33.8160019 C 19.3899994,33.1980019 19.5620003,32.5929985 19.7220001,32.0040016 L 17.9570007,32.0040016 C 17.7929993,32.5970001 17.6149998,33.2029991 17.4179993,33.8190002 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 14,18 L 15,18 L 15,20 L 14,20 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,21 L 15,21 L 15,23 L 14,23 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,24 L 15,24 L 15,26 L 14,26 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,27 L 15,27 L 15,29 L 14,29 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,30 L 15,30 L 15,32 L 14,32 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,33 L 15,33 L 15,35 L 14,35 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,36 L 15,36 L 15,38 L 14,38 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,39 L 15,39 L 15,41 L 14,41 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 14,42 L 15,42 L 15,44 L 14,44 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 24,18 L 25,18 L 25,20 L 24,20 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 24,21 L 25,21 L 25,23 L 24,23 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 24,24 L 25,24 L 25,26 L 24,26 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 24,27 L 25,27 L 25,29 L 24,29 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 24,30 L 25,30 L 25,32 L 24,32 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 24,33 L 25,33 L 25,35 L 24,35 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,18 L 35,18 L 35,20 L 34,20 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,21 L 35,21 L 35,23 L 34,23 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,24 L 35,24 L 35,26 L 34,26 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,27 L 35,27 L 35,29 L 34,29 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,30 L 35,30 L 35,32 L 34,32 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,33 L 35,33 L 35,35 L 34,35 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,36 L 35,36 L 35,38 L 34,38 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,39 L 35,39 L 35,41 L 34,41 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 34,42 L 35,42 L 35,44 L 34,44 Z" Fill="[SMSolidColorBrush]#ff58987f" Height="[float]2" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]1" />
+							<Path Data="[PathGeometry]M 28.0779991,44 L 25.8220005,44 L 24.5330009,42.2029991 L 23.2099991,44 L 21,44 L 23.3789997,40.9959984 L 21.0370007,38 L 23.2929993,38 L 24.5610008,39.7599983 L 25.8339996,38 L 28.052,38 L 25.7049999,40.9550018 L 28.0779991,44 Z" Fill="[SMSolidColorBrush]#b2000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 35.8380013,40.1069984 C 35.8380013,39.973999 35.8050003,39.8409996 35.737999,39.7099991 C 35.6710014,39.5789986 35.5540009,39.4790001 35.3860016,39.4140015 C 35.2360001,39.3569984 35.0480003,39.3260002 34.8240013,39.3199997 C 34.6010017,39.3149986 34.2869987,39.3120003 33.8829994,39.3120003 L 33.6899986,39.3120003 L 33.6899986,41.0029984 L 34.012001,41.0029984 C 34.3370018,41.0029984 34.6160011,40.9980011 34.8440018,40.9869995 C 35.0719986,40.9760017 35.2540016,40.9399986 35.387001,40.8800011 C 35.5730019,40.7980003 35.6949997,40.6910019 35.7519989,40.5610008 C 35.8089981,40.4309998 35.8380013,40.2789993 35.8380013,40.1069984 Z" Fill="[SMSolidColorBrush]#b2000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 22,36 L 27,36 L 27,37 L 22,37 Z" Fill="[SMSolidColorBrush]#b2000000" Height="[float]1" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]5" />
+							<IconTemplate Height="[float]50" HorizontalAlignment="[HorizontalAlignment]Center" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[string][Comp]AAL_Statistics_Base.gcomp" Top="[float]0" VerticalAlignment="[VerticalAlignment]Center" Width="[float]50" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+		<p.IconModel Target="NI:Analysis:Statistics:Mean\ \(CDB\)\.gvi">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="2 2 27 27">
+						<IconPanel Height="[float]50" Left="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]50">
+							<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]50" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]50">
+								<Rectangle Fill="[SMSolidColorBrush]#ff999999" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+								<Rectangle Fill="[SMSolidColorBrush]#ffe6e6e6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#ffffffff" Top="[float]0" />
+								<Rectangle Fill="[SMLinearGradientBrush]{Start: 0.5 0}, {End: 0.5 1}, {Stops: {Stop: #ffe6e6e6 0}, {Stop: #ffd9d9d9 1}}" Height="[float]6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]2,0,2,2" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2" RadiusY="[float]2" Top="[float]0" VerticalAlignment="[VerticalAlignment]Bottom" />
+								<Rectangle Fill="[SMLinearGradientBrush]{Start: 0.5 0}, {End: 0.5 1}, {Stops: {Stop: #fffafafa 0}, {Stop: #ffe6e6e6 1}}" Height="[float]6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]2,2,2,0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2" RadiusY="[float]2" Top="[float]0" VerticalAlignment="[VerticalAlignment]Top" />
+							</IconTemplate>
+							<Path Data="[PathGeometry]M 50,46 C 50,48.2000008 48.2000008,50 46,50 L 4,50 C 1.79999995,50 0,48.2000008 0,46 L 0,4 C 0,1.79999995 1.79999995,0 4,0 L 46,0 C 48.2000008,0 50,1.79999995 50,4 L 50,46 Z" Fill="[SMSolidColorBrush]#ff727273" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 49,46 C 49,47.6500015 47.6500015,49 46,49 L 4,49 C 2.3499999,49 1,47.6500015 1,46 L 1,4 C 1,2.3499999 2.3499999,1 4,1 L 46,1 C 47.6500015,1 49,2.3499999 49,4 L 49,46 Z" Fill="[SMSolidColorBrush]#ffffffff" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 48,46 C 48,47.0999985 47.0999985,48 46,48 L 4,48 C 2.9000001,48 2,47.0999985 2,46 L 2,4 C 2,2.9000001 2.9000001,2 4,2 L 46,2 C 47.0999985,2 48,2.9000001 48,4 L 48,46 Z" Fill="[SMSolidColorBrush]#ffeff6ec" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 46,2 L 4,2 C 2.9000001,2 2,2.9000001 2,4 L 2,12 L 48,12 L 48,4 C 48,2.9000001 47.0999985,2 46,2 Z M 16.3360004,10.9820004 C 16.1480007,10.6639996 15.9650002,10.3470001 15.7740002,9.91899967 C 15.3269997,8.92099953 15.1409998,7.94000006 14.8920002,7.09100008 C 14.3059998,5.09499979 13.816,4.70100021 12.9069996,4.66400003 C 12.0780001,4.63100004 11.5089998,5.07200003 10.9219999,7.0710001 C 10.6730003,7.91900015 10.25,8.86100006 9.80500031,9.8579998 C 9.61699963,10.2779999 9.48200035,10.6269999 9.29699993,10.9420004 L 7.55999994,10.9949999 C 7.79500008,10.6470003 8.04899979,10.1990004 8.31799984,9.59700012 C 8.74300003,8.64700031 9.27400017,7.69700003 9.5170002,6.87099981 C 10.0830002,4.94299984 10.7860003,3 12.8859997,3 C 15.052,3 15.5889997,4.86499977 16.1550007,6.78999996 C 16.3980007,7.6170001 16.8139992,8.59200001 17.2399998,9.54300022 C 17.5079994,10.1429996 17.7630005,10.592 18,10.941 L 16.3360004,10.9820004 Z M 32,5 L 27.7329998,5 C 28.2080002,5.62799978 28.5,6.40199995 28.5,7.25 C 28.5,9.3210001 26.8209991,11 24.75,11 C 22.6790009,11 21,9.3210001 21,7.25 C 21,5.43599987 22.2880001,3.84699988 24,3.5 L 32,3.5 L 32,5 Z M 40.6559982,10.7709999 L 40.6739998,10.0509996 C 40.3470001,10.6000004 39.0929985,10.7709999 37.8790016,10.7709999 C 36.9640007,10.7709999 35.9029999,10.3290005 35.6069984,8.71500015 L 34.2369995,10.7709999 L 32.9529991,10.7709999 L 35.5209999,6.92000008 L 35.5209999,3.06800008 L 36.8050003,3.06800008 L 36.8050003,6.91900015 L 36.8050003,8.20300007 C 36.8050003,9.50199986 37.1599998,9.73900032 38.2890015,9.73900032 C 39.1230011,9.73900032 40.4300003,9.31499958 40.6559982,8.76500034 L 40.6559982,3.06800008 L 41.9399986,3.06800008 L 41.9399986,9.48700047 C 41.9399986,10.1929998 41.8720016,10.7709999 42,10.7709999 L 40.6559982,10.7709999 Z" Fill="[SMSolidColorBrush]#ff58967f" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 22.625,7.22900009 C 22.625,6.0206008 23.6046009,5.04099989 24.8129997,5.04099989 C 26.0214005,5.04099989 27.0009995,6.0206008 27.0009995,7.22900009 C 27.0009995,8.43739891 26.0214005,9.41699982 24.8129997,9.41699982 C 23.6046009,9.41699982 22.625,8.43739891 22.625,7.22900009 Z" Fill="[SMSolidColorBrush]#ff58967f" Height="[float]4.376" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]4.376" />
+							<Path Data="[PathGeometry]M 16.1459999,34 L 13.908,34 L 13.908,28.1580009 L 12.2910004,31.9489994 L 10.7379999,31.9489994 L 9.12100029,28.1580009 L 9.12100029,34 L 7,34 L 7,25.2749996 L 9.61299992,25.2749996 L 11.5760002,29.6520004 L 13.533,25.2749996 L 16.1459999,25.2749996 L 16.1459999,34 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 24.684,34 L 18.3729992,34 L 18.3729992,25.2749996 L 24.684,25.2749996 L 24.684,26.9629993 L 20.6119995,26.9629993 L 20.6119995,28.4689999 L 24.3910007,28.4689999 L 24.3910007,30.1569996 L 20.6119995,30.1569996 L 20.6119995,32.3129997 L 24.684,32.3129997 L 24.684,34 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 34.6329994,34 L 32.3089981,34 L 31.7019997,32.2360001 L 28.4729996,32.2360001 L 27.8649998,34 L 25.5970001,34 L 28.8199997,25.2749996 L 31.4099998,25.2749996 L 34.6329994,34 Z M 31.1599998,30.6369991 L 30.0879993,27.5119991 L 29.0139999,30.6369991 L 31.1599998,30.6369991 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<Path Data="[PathGeometry]M 43.8199997,34 L 41.6520004,34 L 37.9490013,28.0119991 L 37.9490013,34 L 35.8860016,34 L 35.8860016,25.2749996 L 38.5750008,25.2749996 L 41.757,30.2730007 L 41.757,25.2749996 L 43.8199997,25.2749996 L 43.8199997,34 Z" Fill="[SMSolidColorBrush]#ff000000" Height="[float]50" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]50" />
+							<IconTemplate Height="[float]50" HorizontalAlignment="[HorizontalAlignment]Center" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[string][Comp]AAL_Statistics.gcomp" Top="[float]0" VerticalAlignment="[VerticalAlignment]Center" Width="[float]50" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+	</IconTable>
+</SourceFile>
