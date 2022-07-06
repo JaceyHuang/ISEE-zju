@@ -1,0 +1,12 @@
+epoch: 25
+
+restore: True
+restore_model: '18.pth'
+test_model: '18.pth'
+
+save_ep: 1
+save_latest_ep: 1
+
+is_saving: False
+is_1N: False
+is_11: False
